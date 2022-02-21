@@ -2,12 +2,15 @@ namespace MaturitaUloha3verze2
 {
     public partial class Form1 : Form
     {
+        /*
         int a1 = 0;
         int a2 = 0;
         int f1 = 0;
         int f2 = 0;
         int p1 = 0;
         int p2 = 0;
+        tohle není potřebný
+        */
 
         double x;
         double y;
@@ -19,8 +22,8 @@ namespace MaturitaUloha3verze2
         int k;
         int l;
 
-        int[] polex = new int[20];
-        int[] poley = new int[20];
+        int[] polex = new int[100];
+        int[] poley = new int[100];
         public Form1()
         {
             InitializeComponent();
@@ -64,7 +67,7 @@ namespace MaturitaUloha3verze2
             //Pen redPen = new Pen(Color.Red, 3);
             Pen greenPen = new Pen(Color.Green, 3);
 
-            Point[] curvePoints = new Point[20];
+            Point[] curvePoints = new Point[100];
 
             int f1 = frekvence1.Value;
             int f2 = frekvence2.Value;
@@ -74,16 +77,16 @@ namespace MaturitaUloha3verze2
             int p2 = fazpos2.Value;
             panel1.Refresh();
 
-            for (i = 0; i < 20; i++)
+            for (i = 0; i < 100; i++)
             {
-                x = a1 * Math.Sin(f1 * (i + 1) + p1) + 150;
-                y = a2 * Math.Sin(f2 * (i + 1) + p2) + 150;
+                x = a1 * Math.Sin(f1 * (i + 1)*0.2 + p1) + 150;
+                y = a2 * Math.Sin(f2 * (i + 1)*0.2 + p2) + 150;
                 polex[i] = Convert.ToInt32(Math.Round(x));
                 poley[i] = Convert.ToInt32(Math.Round(y));
             }
 
 
-            for (j = 0; j < 20; j++)
+            for (j = 0; j < 100; j++)
             {
                 xv = polex[j];
                 yv = poley[j];
@@ -114,12 +117,12 @@ namespace MaturitaUloha3verze2
 
             controlx.Clear();
 
-            for (i = 0; i < 20; i++)
+            for (i = 0; i < 100; i++)
             {
-                x = a1 * Math.Sin(f1 * (i + 1) + p1);
+                x = a1 * Math.Sin(f1 * (i + 1)*0.2 + p1);
                 polex[i] = Convert.ToInt32(Math.Round(x));
             }
-            for (k = 0; k < 20; k++)
+            for (k = 0; k < 100; k++)
             {
 
                 controlx.Text = controlx.Text + "  " + polex[k];
@@ -142,12 +145,12 @@ namespace MaturitaUloha3verze2
             
             controly.Clear();
 
-            for (i = 0; i < 20; i++)
+            for (i = 0; i < 100; i++)
             {
-                y = a2 * Math.Sin(f2 * (i + 1) + p2);
+                y = a2 * Math.Sin(f2 * (i + 1)*0.2 + p2);
                 poley[i] = Convert.ToInt32(Math.Round(y));
             }
-            for (l = 0; l < 20; l++)
+            for (l = 0; l < 100; l++)
             {
                 controly.Text = controly.Text + "  " + poley[l];
             }
