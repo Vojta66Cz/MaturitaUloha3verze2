@@ -2,12 +2,15 @@ namespace MaturitaUloha3verze2
 {
     public partial class Form1 : Form
     {
+        /*
         int a1 = 0;
         int a2 = 0;
         int f1 = 0;
         int f2 = 0;
         int p1 = 0;
         int p2 = 0;
+        tohle je navíc
+        */
 
         double x;
         double y;
